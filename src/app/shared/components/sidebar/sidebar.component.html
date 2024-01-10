@@ -1,0 +1,15 @@
+<div class="bg-dark border-right p-3" id="sidebar">
+  <h3 class="text-light">Gifs App</h3>
+  <hr class="text-warning" />
+  <div class="list-group list-reset">
+    <div *ngFor="let tag of tags" #btnTag class="btn-group container" role="group">
+      <button
+        class="list-group-item list-group-item-action btn"
+        (click)="searchTag(tag)"
+      >
+        {{ tag | titlecase }}
+      </button>
+      <button class="btn btn-danger" (click)="removeTag(tag)">Eliminar</button>
+    </div>
+  </div>
+</div>

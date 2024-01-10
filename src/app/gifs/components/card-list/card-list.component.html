@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div [ngClass]="{effectBlur:!( indice === i) && active}" *ngFor="let gif of gifs; let i = index" class="gif-container">
+
+    <shared-lazy-image (mouseout)="focus()" [url]="gif.images.downsized_medium.url" (click)="openImageModal(gif.images.downsized_medium.url)" class="blur" (mouseover)="focus(i)"></shared-lazy-image>
+
+    <!-- <img (mouseout)="focus()" [src]="gif.images.downsized_medium.url" (click)="openImageModal(gif.images.downsized_medium.url)" class="blur" (mouseover)="focus(i)"> -->
+
+  </div>
+
+  <shared-modal *ngIf="showModal" [imageUrl]="modalImageUrl" (closeModal)="closeImageModal()"></shared-modal>
+
+</div>
+
+
